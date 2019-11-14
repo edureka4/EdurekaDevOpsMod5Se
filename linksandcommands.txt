@@ -23,19 +23,42 @@ Create the same sample with Test NG
 Integration with Jenkins
 ================================
 # Modify code to run in headless mode as in the file here
+# Make sure the addressbook.war file is present in /opt/tomcat/webapps
+# Make sure the port where tomcat is running and the port mentioned in the selenium jar file is same
 # right click on the project and export -> Java -> Runnable Jar file -> Give the path -> Repack 
 # copy it to gitHub repository
 # create a job in Jenkins server
+# use the Execute shell ->Build in Jenkins job as java -jar <path_name>/sel_App.jar
 
+Install chrome in ubuntu cloud system
+==========================================
+  157  sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
+  158  sudo echo "deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+  159  sudo apt-get -y update
+  160  sudo apt-get -y install google-chrome-stable
 
 Install chrome driver in the ubuntu system
 ==============================================
+# https://tecadmin.net/setup-selenium-chromedriver-on-ubuntu/
  1773  wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
  1774  sudo apt-get install unzip
  1775  unzip chromedriver_linux64.zip
  1787  sudo mv chromedriver /usr/bin/chromedriver
  1788  sudo chown root:root /usr/bin/chromedriver
  1789  sudo chmod +x /usr/bin/chromedriver
+
+
+
+
+Common Errors
+======================
+1.Selenium can't locate an element
+Ans. Probably addressbook application is not running
+
+2. Chrome not found
+Ans.Probably chrome and chromedriver is not installed in the system where you are running selenium
+
+  
 
 
 
