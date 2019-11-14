@@ -1,0 +1,42 @@
+# https://www.seleniumhq.org/download/ - Selenium download page
+
+Create a Sample selenium project
+==============================
+# Create a Maven project File ->New ->Project ->Maven
+# Give the artifact and group ID
+# right click on the project to Build Path -> Configure Build Path
+# include Selenium Jar by Add External Jars
+# Use the pom.xml and App.java in the same directory
+# start the tomcat service after going to the path where tomcat is installed . My case it was /c/Users/Anju/tomcat/apache-tomcat-8.5.45/bin
+sh startup.sh
+# Run the application as a Java Application
+
+Create the same sample with Test NG
+===================================
+#Include TestNg dependenies => import org.testng.Assert;
+			       import org.testng.annotations.Test;
+#Install TestNG software from Help -> Install Software -> TestNG Eclipse - http://beust.com/eclipse ->Install Anyway
+# From the project folder we created in the previous sample New ->Other ->  TestNG class 
+# package name myTestNG and select @AfterTest and @BeforeTest , class name =>NewTest,
+# From NewTest.java -> Run -> Test NG test 
+
+Integration with Jenkins
+================================
+# Modify code to run in headless mode as in the file here
+# right click on the project and export -> Java -> Runnable Jar file -> Give the path -> Repack 
+# copy it to gitHub repository
+# create a job in Jenkins server
+
+
+Install chrome driver in the ubuntu system
+==============================================
+ 1773  wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+ 1774  sudo apt-get install unzip
+ 1775  unzip chromedriver_linux64.zip
+ 1787  sudo mv chromedriver /usr/bin/chromedriver
+ 1788  sudo chown root:root /usr/bin/chromedriver
+ 1789  sudo chmod +x /usr/bin/chromedriver
+
+
+
+
